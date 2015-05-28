@@ -1,0 +1,7 @@
+@import url("../../shared/css/variables.css");
+
+
+.listing-grid-container {
+  width: 100%;
+  height: auto;
+}

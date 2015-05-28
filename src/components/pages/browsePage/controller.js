@@ -20,7 +20,11 @@ export var dataTree = new Baobab({
     , {name: 'Filters'}
     , {name: 'Sort by'}
     ]
-  , listings: 'listings'
+  , browsing: {
+      mode: 'grid'
+    , params: ['vehicle', 'wheels']
+    , listings: [{name: 'bike'}, {name: 'car'}]
+    }
 });
 
 export function fetchDataTemplate(component) {
