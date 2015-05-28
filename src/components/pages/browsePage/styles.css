@@ -1,0 +1,16 @@
+@import url("../../shared/css/base.css");
+
+.browse-page {
+  width: 100%;
+  height: 100%;
+}
+
+.browse-page__header {
+  width: 100%;
+  height: 6.25em;
+}
+
+.browse-page__content {
+  width: 100%;
+  min-height: calc(100vh - 6.25rem);
+}

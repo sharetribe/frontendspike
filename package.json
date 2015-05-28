@@ -1,0 +1,40 @@
+{
+  "name": "sharetribe-webapp-spike",
+  "version": "0.0.1",
+  "description": "Research spike for testing possible frontend stack",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "react",
+    "hot",
+    "webpack",
+    "babel",
+    "6to5",
+    "sharetribe"
+  ],
+  "author": "Sharetribe / Vesa Luusua",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^5.1.11",
+    "babel-loader": "^5.0.0",
+    "baobab": "^1.1.0",
+    "baobab-react": "^0.1.1",
+    "cssnext": "^1.4.0",
+    "csswring": "^3.0.4",
+    "eslint": "^0.20.0",
+    "extract-text-webpack-plugin": "^0.7.0",
+    "gulp": "^3.8.11",
+    "gulp-util": "^3.0.4",
+    "react-hot-loader": "^1.2.2",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "dependencies": {
+    "style-loader": "*",
+    "css-loader": "*",
+    "postcss-loader": "*",
+    "autoprefixer-core": "^5.1.11",
+    "react": "^0.13.0"
+  }
+}
