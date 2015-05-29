@@ -4,15 +4,9 @@ export var componentify = ComposedComponent => class extends Component {
 
   constructor(props) {
     super(props);
-    //this.state = { data: null };
-  }
-
-  getData() {
-    return new ComposedComponent.getDataTemplate() || null;
   }
 
   componentDidMount() {
-    //this.setState({ data: 'Hello World!' });
     console.log('received props: ',this.props);
   }
 
