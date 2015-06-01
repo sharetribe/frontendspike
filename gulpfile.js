@@ -54,7 +54,7 @@ gulp.task("webpack:build", function(callback) {
 gulp.task("webpack-dev-server", function(callback) {
   // modify some webpack config options
   var devConfig = Object.create(webpackConfig);
-  devConfig.devtool = "eval-source-map";// or "eval"
+  devConfig.devtool = "eval-cheap-source-map";
   devConfig.debug = true;
 
   // Start a webpack-dev-server

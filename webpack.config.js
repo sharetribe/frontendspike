@@ -6,7 +6,7 @@ var cssnext = require('cssnext');     // package for future css syntax plugins
 var csswring = require('csswring');   // minify css files
 
 module.exports = {
-    devtool: 'eval-cheap-source-map'//'eval-source-maps'
+    devtool: 'eval'//'eval-source-maps'
   , entry: {
       main: './src/app'
     , vendor: ['react']

@@ -1,8 +1,8 @@
 import React                from "react";
 import { branch }           from 'baobab-react/higher-order';
 import { componentify }     from '../../shared/js/enhance';
-import BrowseSettings       from '../../combined/BrowseSettings/main';
-import BrowseListings       from '../../combined/BrowseListings/main';
+import BrowseSettings       from '../../combined/browseSettings/main';
+import BrowseListings       from '../../combined/browseListings/main';
 import './styles.css';
 
 class BrowsePageContent {
