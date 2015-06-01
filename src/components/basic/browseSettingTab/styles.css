@@ -1,0 +1,30 @@
+@import url("../../shared/css/variables.css");
+
+.browse-setting-tab {
+  width: 100%;
+  height: 100%;
+  float: left;
+  background-color: color( var(--mainColor) blackness(+10%) );
+  padding: calc(var(--paddingSize) / 2) var(--paddingSize);
+  cursor: pointer;
+}
+
+.browse-setting-tab__icon {
+  font-size: 1.875rem;
+  float: left;
+  color: color( var(--mainColor) blackness(+40%) );
+  margin-right: calc(var(--paddingSize) / 2);
+  vertical-align: middle;
+}
+.browse-setting-tab__title {
+  font-size: 1.875rem;
+  float: left;
+  color: color( var(--mainColor) blackness(+100%) );
+}
+
+.browse-setting-tab__arrow {
+  font-size: 1.875rem;
+  float: right;
+  color: color( var(--mainColor) blackness(+40%) );
+  vertical-align: middle;
+}

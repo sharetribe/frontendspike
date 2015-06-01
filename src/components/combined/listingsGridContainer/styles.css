@@ -3,5 +3,6 @@
 
 .listing-grid-container {
   width: 100%;
-  height: auto;
+  height: 50vh;/* auto; */
+  background-color: color( var(--mainColor) blackness(+5%) );
 }

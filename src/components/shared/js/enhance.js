@@ -7,7 +7,7 @@ export var componentify = ComposedComponent => class extends Component {
   }
 
   componentDidMount() {
-    console.log('received props: ',this.props);
+    //console.log('received props: ',this.props);
   }
 
   // _bind(...methods) {

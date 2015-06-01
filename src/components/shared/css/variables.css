@@ -2,6 +2,9 @@
 /* Variables */
 
 :root {
-  --mainColor: yellow;
+  --mainColor: white;
   --pageTitleSize: 48px;
+
+
+  --paddingSize: 2.5rem;
 }
