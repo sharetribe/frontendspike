@@ -10,7 +10,6 @@ class BrowseListings {
   render() {
     return (
       <div className="browse-listings">
-        debugging - mode: {this.props.mode}
         <div className="browse-listings__flags">
           <BrowseParams />
         </div>

@@ -8,7 +8,7 @@
 
 .browse-listings__flags {
   width: 100%;
-  height: 3rem;
+  padding: calc(var(--paddingSize) / 4) calc(var(--paddingSize) * 3 / 4);
 }
 
 .browse-listings__content {

@@ -3,5 +3,8 @@
 
 .browse-params {
   width: 100%;
-  height: 100%;
+  background-color: var(--mainColor);
+  /* todo: use mixins instead */
+  overflow: auto;
+  zoom: 1;
 }

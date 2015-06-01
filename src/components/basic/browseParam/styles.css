@@ -1,0 +1,24 @@
+@import url("../../shared/css/variables.css");
+
+.browse-param {
+  float: left;
+  background-color: color( var(--mainColor) blackness(+10%) );
+  padding: calc(var(--paddingSize) / 4);
+  margin: calc(var(--paddingSize) / 4);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.browse-param__title {
+  font-size: 0.875rem;
+  float: left;
+  color: color( var(--mainColor) blackness(+100%) );
+}
+
+.browse-param__delete {
+  font-size: 0.875rem;
+  float: right;
+  color: color( var(--mainColor) blackness(+40%) );
+  vertical-align: middle;
+  margin-left: calc(var(--paddingSize) / 2);
+}
