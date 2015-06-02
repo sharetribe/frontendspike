@@ -1,0 +1,16 @@
+@import url("../../shared/css/variables.css");
+
+.grid-card-author {
+  float: right;
+  max-width: 50%;
+}
+.grid-card-author__avatar {
+  float: left;
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: 0.8125rem;
+  margin-right: var(--gutterSize);
+}
+.grid-card-author__name {
+  float: left;
+}

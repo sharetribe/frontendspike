@@ -1,0 +1,7 @@
+@import url("../../shared/css/variables.css");
+
+
+.grid-card-description {
+  display: inline-block;
+  width: 100%;
+}

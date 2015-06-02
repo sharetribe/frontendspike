@@ -1,0 +1,9 @@
+@import url("../../shared/css/variables.css");
+
+
+.grid-card {
+  float: left;
+  width: calc(100% / 6 - ( var(--gutterSize) * 2) );
+  margin: var(--gutterSize);
+  background-color: gray;
+}

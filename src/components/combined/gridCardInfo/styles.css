@@ -1,0 +1,25 @@
+@import url("../../shared/css/variables.css");
+
+
+.grid-card-info {
+  position: relative;
+  width: 100%;
+  height: 7rem;
+  background-color: white;
+  padding: calc(var(--gutterSize) * 2);
+
+  color: var(--darkFontColor);
+  text-decoration: none;
+}
+
+.grid-card-info__content {
+  width: 100%;
+  height: 2.8rem; /*TODO 2 * lineheight */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.grid-card-info__footer {
+  width: 100%;
+  height: 1.625rem;
+  line-height: 1.625rem;
+}

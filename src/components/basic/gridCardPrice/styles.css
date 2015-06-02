@@ -1,0 +1,8 @@
+@import url("../../shared/css/variables.css");
+
+
+.grid-card-price {
+  float: left;
+  font-size: var(--emphaSize);
+  color: var(--mainColor);
+}

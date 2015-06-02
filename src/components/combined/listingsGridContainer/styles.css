@@ -1,8 +1,14 @@
 @import url("../../shared/css/variables.css");
-
+@import url("../../shared/css/mixins.css");
 
 .listing-grid-container {
+  @mixin clearfix;
   width: 100%;
-  height: 50vh;/* auto; */
-  background-color: color( var(--mainColor) blackness(+5%) );
+  height: auto;
+  padding: var(--gutterSize) calc(var(--gutterSize) * 3);
+
+}
+
+.listing-grid-container__wrapper {
+  @mixin clearfix;
 }
