@@ -4,6 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var autoprefixer = require('autoprefixer-core');
 var cssnext = require('cssnext');     // package for future css syntax plugins
 var csswring = require('csswring');   // minify css files
+var cssmixins = require('postcss-mixins');
 
 module.exports = {
     devtool: 'eval'//'eval-source-maps'
@@ -44,5 +45,5 @@ module.exports = {
         /* filename= */"vendor.bundle.js")
     //, new ExtractTextPlugin("[name].css")
     ]
-  , postcss: [autoprefixer(), cssnext(), csswring()]
+  , postcss: [autoprefixer(), cssnext(), cssmixins(), csswring()]
   };

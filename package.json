@@ -31,10 +31,11 @@
     "webpack-dev-server": "^1.7.0"
   },
   "dependencies": {
-    "style-loader": "*",
+    "autoprefixer-core": "^5.1.11",
     "css-loader": "*",
     "postcss-loader": "*",
-    "autoprefixer-core": "^5.1.11",
-    "react": "^0.13.0"
+    "postcss-mixins": "^0.3.0",
+    "react": "^0.13.0",
+    "style-loader": "*"
   }
 }
