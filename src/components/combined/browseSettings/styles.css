@@ -4,12 +4,14 @@
 .browse-settings {
   width: 100%;
   height: 100%;
-  background-color: color( var(--mainColor) blackness(+10%) );
+  background-color: color( var(--backgroundColor) blackness(+6%) );
+  margin-top: 3px;
 }
 
-.browse-settings__tab {
-  border: solid 1px color( var(--mainColor) blackness(+20%) );
+.browse-settings__tab:nth-child(n) {
+  border-bottom: solid 1px color( var(--backgroundColor) blackness(+20%) );
+  border-left: solid 1px color( var(--backgroundColor) blackness(+20%) );
 }
-.browse-settings__tab:nth-child(1n+1) {
+.browse-settings__tab:first-child {
   border-left: 0;
 }

@@ -4,4 +4,6 @@
 .main-header {
   width: 100%;
   height: 100%;
+  background-color: var(--backgroundColor);
+  border-bottom: solid 1px color( var(--backgroundColor) blackness(+20%) );
 }

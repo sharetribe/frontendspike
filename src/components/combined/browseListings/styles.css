@@ -8,7 +8,7 @@
 
 .browse-listings__flags {
   width: 100%;
-  padding: calc(var(--paddingSize) / 4) calc(var(--paddingSize) * 3 / 4);
+  padding: calc(var(--gutterSize) * 2) calc(var(--gutterSize) * 3) 0 calc(var(--gutterSize) * 3);
 }
 
 .browse-listings__content {

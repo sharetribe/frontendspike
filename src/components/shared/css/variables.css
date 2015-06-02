@@ -2,9 +2,13 @@
 /* Variables */
 
 :root {
-  --mainColor: white;
+  --mainColor: #347F9E;
+  --secondaryColor: red;
+  --backgroundColor: white;
+  --darkFontColor: black;
+
+  --emphaSize: 24px;
   --pageTitleSize: 48px;
 
-
-  --paddingSize: 2.5rem;
+  --gutterSize: 0.625rem;
 }
