@@ -4,4 +4,7 @@
 .grid-card-description {
   display: inline-block;
   width: 100%;
+  height: calc(var(--lineHeight) * 2);
+  line-height: var(--lineHeight);
+  overflow: hidden;
 }

@@ -14,7 +14,7 @@ class ListingsGridContainer {
       <div className="listing-grid-container">
         <div className="listing-grid-container__wrapper">
           { this.props.listings.map(listing =>
-            <GridCard key={listing.id} info={listing} />
+            <GridCard key={listing.id} info={listing} cardImageRatio={this.props.cardImageRatio} />
             )
           }
         </div>
@@ -25,6 +25,7 @@ class ListingsGridContainer {
 
 export default branch(componentify(ListingsGridContainer), {
   cursors: {
-    listings: ['browsing', 'listings']
+      cardImageRatio: ['browsing', 'cardImageRatio']
+    , listings: ['browsing', 'listings']
   }
 });

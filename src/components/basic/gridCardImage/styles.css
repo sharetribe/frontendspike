@@ -6,10 +6,24 @@
   background-color: gray;
 }
 
-.grid-card-image__wrapper {
+@define-mixin grid-card-image__wrapper {
   width: 100%;
-  padding-bottom: 100%; /* aspect ratio: square; */
   position: relative;
+}
+
+.grid-card-image__wrapper__square {
+  @mixin grid-card-image__wrapper;
+  padding-bottom: 100%; /* aspect ratio: square; */
+}
+
+.grid-card-image__wrapper__landscape {
+  @mixin grid-card-image__wrapper;
+  padding-bottom: calc(100% * 4/3); /* aspect ratio: square; */
+}
+
+.grid-card-image__wrapper__portrait {
+  @mixin grid-card-image__wrapper;
+  padding-bottom: calc(100% * 3/4); /* aspect ratio: square; */
 }
 
 .grid-card-image__content {

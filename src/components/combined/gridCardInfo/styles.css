@@ -10,6 +10,7 @@
 
   color: var(--darkFontColor);
   text-decoration: none;
+  overflow: hidden;
 }
 
 .grid-card-info__content {
