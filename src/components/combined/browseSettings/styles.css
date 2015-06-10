@@ -8,6 +8,9 @@
   margin-top: 3px;
 }
 
+.browse-settings__tab {
+  float: left;
+}
 .browse-settings__tab:nth-child(n) {
   border-bottom: solid 1px color( var(--backgroundColor) blackness(+20%) );
   border-left: solid 1px color( var(--backgroundColor) blackness(+20%) );

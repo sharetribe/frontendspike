@@ -32,7 +32,10 @@
   },
   "dependencies": {
     "autoprefixer-core": "^5.1.11",
+    "bacon": "0.0.1",
+    "baconjs": "^0.7.61",
     "css-loader": "*",
+    "lodash": "^3.9.3",
     "postcss-loader": "*",
     "postcss-mixins": "^0.3.0",
     "react": "^0.13.0",

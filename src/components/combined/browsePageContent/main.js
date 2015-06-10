@@ -1,23 +1,26 @@
-import React                from "react";
-import { branch }           from 'baobab-react/higher-order';
-import { componentify }     from '../../shared/js/enhance';
+import React, { Component } from "react";
+import { componentify }     from '../../shared/js/componentify';
 import BrowseSettings       from '../../combined/browseSettings/main';
 import BrowseListings       from '../../combined/browseListings/main';
 import './styles.css';
 
-class BrowsePageContent {
+class BrowsePageContent extends Component {
 
-  constructor() {
-  }
+  static dataNeed = {
+      children: [BrowseListings]
+    ,
+    }
+
 
   render() {
-    return (
+    let hasData = this.props.browsing != null && this.props.browsing.listings != null
+    return !hasData ? <div>Fetching data</div> : (
       <div className="browse-page-content">
         <div className="browse-page-content__settings">
-          <BrowseSettings />
+          <BrowseSettings settings={this.props.browsing.settings} />
         </div>
         <div className="browse-page-content__content">
-          <BrowseListings />
+          <BrowseListings context={this.props.context} browsing={this.props.browsing} />
         </div>
       </div>
     );

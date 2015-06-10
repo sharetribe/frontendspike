@@ -1,10 +1,12 @@
-import Grapnel            from '../vendor/grapnel.router';
-import * as controller    from '../components/pages/browsePage/controller';
+import Grapnel                  from '../vendor/grapnel.router';
+import initBrowsePageController from '../components/pages/browsePage/controller';
+import _                        from 'lodash';
 
 export function getRouter() {
 
   var router = new Grapnel({ pushState : true });
   var body = document.getElementsByTagName('body')[0];
+
 
   /* Browse page. Default mode is grid */
   router.get('/browse', function(req) {
@@ -12,9 +14,26 @@ export function getRouter() {
   });
 
   router.get('/browse/:mode', function(req) {
-    var browseMode = req.params.mode;
-    controller.render(controller.page, controller.dataTree, body);
+    let browseMode = req.params.mode;
+    let initialData = {};
+
+    if(window.bootstrappedData != null) {
+      if(window.bootstrappedData.browsing != null) {
+        initialData.browsing = window.bootstrappedData.browsing;
+      }
+      if(window.bootstrappedData.header != null) {
+        initialData.header = window.bootstrappedData.header;
+      }
+    }
+
+    _.set(initialData, 'browsing.browseMode', browseMode);
+
+    initBrowsePageController(initialData, body);
   });
+
+
+
+
 
   return router;
 }

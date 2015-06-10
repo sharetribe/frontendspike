@@ -1,6 +1,6 @@
 import React                    from "react";
 //import { branch }               from 'baobab-react/higher-order';
-import { componentify }         from '../../shared/js/enhance';
+import { componentify }         from '../../shared/js/componentify';
 import './styles.css';
 
 class GridCardPrice {

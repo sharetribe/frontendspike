@@ -1,25 +1,29 @@
-import React                    from "react";
-import { branch }               from 'baobab-react/higher-order';
-import { componentify }         from '../../shared/js/enhance';
+import React, {Component}       from "react";
+import { componentify }         from '../../shared/js/componentify';
+import * as controller          from '../../pages/browsePage/controller';
 import './styles.css';
 
-class BrowseParam {
 
-  constructor() {
+class BrowseParam extends Component {
+
+  constructor(props) {
+    super(props);
+    this.clickHandler = this.clickHandler.bind(this);
   }
 
   render() {
     return (
-      <a className="browse-param">
-        <h1 className="browse-param__title">{this.props.title}</h1>
+      <a className="browse-param" onClick={ this.clickHandler }>
+        <h1 className="browse-param__title">{this.props.param.title}</h1>
         <span className="browse-param__delete">&#10006;</span>
       </a>
     );
   }
+
+  clickHandler(event){
+   this.props.removeAction(this.props.param.id);
+  }
 }
 
-export default branch(componentify(BrowseParam), {
-  cursors: {
-    settingTitle: ['settings']
-  }
-});
+
+export default componentify(BrowseParam);

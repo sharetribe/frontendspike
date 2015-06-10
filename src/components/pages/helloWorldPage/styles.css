@@ -1,6 +1,6 @@
 /* App page */
-@import url("../../base.css");
-@import url("../../variables.css");
+@import url("../../shared/css/base.css");
+@import url("../../shared/css/variables.css");
 
 
 .hello-world-container {

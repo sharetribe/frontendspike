@@ -1,20 +1,20 @@
-import React                    from "react";
-import { branch }               from 'baobab-react/higher-order';
-import { componentify }         from '../../shared/js/enhance';
-import BrowseSettingTab         from '../../basic/browseSettingTab/main';
+import React, { Component }     from "react";
+import { componentify }         from '../../shared/js/componentify';
+import IconTab         from '../../basic/iconTab/main';
 import './styles.css';
 
-class BrowseSettings {
+class BrowseSettings extends Component {
 
-  constructor() {
-    this.style = {width: 'calc(100% / 3)', float: 'left'}
+  constructor(props) {
+    super(props);
+    this.style = {width: 'calc(100% / 3)'}
   }
 
   render() {
     return (
       <ul className="browse-settings">
         { this.props.settings.map(s =>
-            <li className="browse-settings__tab" key={s.name} style={this.style}><BrowseSettingTab title={s.name} /></li>
+            <li className="browse-settings__tab" key={s.name} style={this.style}><IconTab icon={"\u2630"} title={s.name} /></li>
           )
         }
       </ul>
@@ -22,8 +22,4 @@ class BrowseSettings {
   }
 }
 
-export default branch(componentify(BrowseSettings), {
-  cursors: {
-    settings: ['settings']
-  }
-});
+export default componentify(BrowseSettings);

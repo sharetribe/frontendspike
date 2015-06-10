@@ -1,28 +1,29 @@
-import React                    from "react";
-import { branch }               from 'baobab-react/higher-order';
-import { componentify }         from '../../shared/js/enhance';
+import React, {Component}       from "react";
+import { componentify }         from '../../shared/js/componentify';
 import BrowseParam              from '../../basic/browseParam/main';
 import './styles.css';
 
-class ListingsParams {
+class BrowseParams extends Component {
 
-  constructor() {
+  constructor(props) {
+    super(props);
+    this.removeParam = this.removeParam.bind(this);
   }
 
   render() {
     return (
       <div className="browse-params">
         { this.props.params.map(param =>
-          <BrowseParam key={param} title={param} />
+          <BrowseParam context={this.props.context} key={param.id} param={param} removeAction={this.removeParam} />
           )
         }
       </div>
     );
   }
+
+  removeParam(paramId) {
+    this.props.context.intents.pushToActionStream('browsing/params/remove', paramId);
+  }
 }
 
-export default branch(componentify(ListingsParams), {
-  cursors: {
-    params: ['browsing', 'params']
-  }
-});
+export default componentify(BrowseParams);
