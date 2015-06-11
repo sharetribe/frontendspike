@@ -1,6 +1,5 @@
 import React, {Component}       from "react";
 import { componentify }         from '../../shared/js/componentify';
-import * as controller          from '../../pages/browsePage/controller';
 import './styles.css';
 
 

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { branch }           from 'baobab-react/higher-order';
 import { componentify }     from '../../shared/js/componentify';
-import * as controller      from '../../pages/browsePage/controller';
 import * as intents         from './intents';
 import './styles.css';
 
@@ -16,7 +14,7 @@ class MainHeader extends Component {
 
   constructor(props) {
     super(props);
-    this.intents = this.props.context.intents;
+    //this.intents = this.props.context.intents;
     this.clickHandler = this.clickHandler.bind(this);
 
   }
@@ -33,7 +31,7 @@ class MainHeader extends Component {
   }
 
   clickHandler(event){
-    this.intents.pushToActionStream('browsing/cardImageRatio/update', event.target.dataset.ratio)
+    this.props.changeCardRatio(event.target.dataset.ratio);
   }
 
 }

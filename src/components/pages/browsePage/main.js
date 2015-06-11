@@ -2,7 +2,6 @@ import React, { Component }     from "react";
 import { componentify }         from '../../shared/js/componentify';
 import Header                   from '../../combined/mainHeader/main';
 import BrowsePageContent        from '../../combined/browsePageContent/main';
-import controller               from './controller';
 import * as intents             from './intents';
 
 // if styles are imported then webpack-dev-server knows when to refresh (hot)
@@ -15,34 +14,34 @@ class BrowsePage extends Component {
 
   static dataNeed = {
       children: [Header, BrowsePageContent]
-    // , collection: {
-    //     listing: {
-    //       fields: ["id"],
-    //       query: {
-    //         count: 5
-    //       }
-    //     }
-    //   }
-    //, entity: ['']
     , intents: intents
     }
 
   constructor(props) {
     super(props);
+    this.changeCardRatio = this.changeCardRatio.bind(this);
   }
 
   render() {
     return (
       <div className="browse-page">
         <div className="browse-page__header">
-          <Header context={this.props.context} />
+          <Header
+            branch={this.props.branch.concat('header')}
+            changeCardRatio={this.changeCardRatio} />
         </div>
         <div className="browse-page__content">
-          <BrowsePageContent {...this.props} />
+          <BrowsePageContent
+            branch={this.props.branch.concat('browsing')}
+            {...this.props} />
         </div>
       </div>
     );
 
+  }
+
+  changeCardRatio(ratio) {
+    this.props.streams.browsingCardImageRatio_update.push({branch: this.props.branch.concat(['browsing', 'cardImageRatio']), ratio: ratio});
   }
 
 }

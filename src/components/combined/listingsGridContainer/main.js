@@ -18,20 +18,32 @@ class ListingsGridContainer extends Component {
   constructor(props) {
     super(props);
     //this.loading = false;
+    this.branch = this.props.branch.concat(['listings']);
   }
 
   render() {
     return (
       <div className="listing-grid-container">
         <div className="listing-grid-container__wrapper">
-          { this.props.browsing.listings.map(listing =>
-            <GridCard key={listing.id} context={this.props.context} listing={listing} cardImageRatio={this.props.cardImageRatio} />
-            )
+          { this.props.browsing.listings.map( function(listing, index) {
+            return (<GridCard
+              key={ listing.id }
+              context={ this.props.context }
+              updateListing={ this.props.streams.browsingListing_update }
+              branch={ this.branch.concat([index]) }
+              listing={ listing }
+              cardImageRatio={ this.props.browsing.cardImageRatio } />)
+            }.bind(this))
           }
         </div>
       </div>
     );
   }
+
+
+
+
+
 
   componentDidMount() {
 
@@ -48,7 +60,7 @@ class ListingsGridContainer extends Component {
 
     showMore.onValue(value => {
       //this.loading = true;
-      this.props.context.intents.pushToActionStream('browsing/listings/showMore', value);
+      this.props.streams.browsingListings_showMore.push(value);
     });
 
     pageChanged.plug(Bacon.mergeAll(

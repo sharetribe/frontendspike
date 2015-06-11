@@ -1,5 +1,5 @@
 import Grapnel                  from '../vendor/grapnel.router';
-import initBrowsePageController from '../components/pages/browsePage/controller';
+import initBrowsePage           from '../components/pages/browsePage/initializer';
 import _                        from 'lodash';
 
 export function getRouter() {
@@ -26,9 +26,9 @@ export function getRouter() {
       }
     }
 
-    _.set(initialData, 'browsing.browseMode', browseMode);
+    _.set(initialData, 'browsing.mode', browseMode);
 
-    initBrowsePageController(initialData, body);
+    initBrowsePage(initialData, body);
   });
 
 

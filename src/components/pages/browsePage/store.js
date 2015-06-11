@@ -5,17 +5,46 @@ import _         from 'lodash';
 
 export default function initStore(initialData) {
 
-  var appState = initialData;
+  var appState = new Baobab(initialData, {
+    clone: true // Default: false
+  });
+  var updateBus = new Bacon.Bus();
+  appState.on('update', () => {
+    console.log('appState refreshed: ', appState.get());
+    updateBus.push('update')
+  });
 
-  var createAppState = function(properties) {
-    properties.forEach(property => {
-      let initialPropertyValue = _.get(appState, property.key);
-      let intentProperty = property.getIntentProperty(initialPropertyValue);
-      _.set(appState, property.key, intentProperty);
-    })
-
-    return  Bacon.combineTemplate(appState);
+  var getTree = function() {
+    return appState;
   }
 
-  return { createAppState }
+  var getUpdateStream = function() {
+    return updateBus;
+  }
+
+  var getAppState = function() {
+    return appState.get();
+  }
+
+  var get = function(branch) {
+    return appState.get(branch);
+  }
+
+  var set = function(branch, value) {
+    appState.set(branch, value);
+  }
+
+  var push = function(branch, valueArray) {
+    appState.select(branch).push(valueArray);
+  }
+
+
+  return {
+      getAppState
+    , get
+    , set
+    , push
+    , getUpdateStream
+    , getTree
+    }
 }

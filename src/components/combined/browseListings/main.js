@@ -15,10 +15,17 @@ class BrowseListings extends Component {
     return (
       <div className="browse-listings">
         <div className="browse-listings__flags">
-          <BrowseParams context={this.props.context} params={this.props.browsing.params} />
+          <BrowseParams
+            context={this.props.context}
+            branch={this.props.branch.concat('params')}
+            params={this.props.browsing.params} />
         </div>
         <div className="browse-listings__content">
-          <ListingsGridContainer context={this.props.context} browsing={this.props.browsing} cardImageRatio={this.props.browsing.cardImageRatio} />
+          <ListingsGridContainer
+            context={this.props.context}
+            streams={this.props.streams}
+            branch={this.props.branch}
+            browsing={this.props.browsing} />
         </div>
 
       </div>

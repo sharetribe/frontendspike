@@ -18,16 +18,26 @@ class GridCard extends Component{
 
   constructor(props) {
     super(props);
-    let hue = Math.floor(Math.random() * 360);
-    this.pastel = 'hsl(' + hue + ', 100%, 87.5%)';
+    let branch = this.props.branch;
+    let data = this.props.listing;
+    data.pastel = `hsl(${ Math.floor(Math.random() * 360)}, 100%, 87.5%)`;
+
+    this.pastel = data.pastel;
+    this.props.updateListing.push({branch: branch, listing: data});
     this.state = { style: {width: '20rem'}};
     this.handleResize = this.handleResize.bind(this);
   }
 
   render() {
     return (
-      <a href={ `/listing/${this.props.listing.id}` } className="grid-card" style={this.state.style}>
-        <GridCardImage image={this.props.listing.image} cardImageRatio={this.props.cardImageRatio} pastel={this.pastel} />
+      <a
+        href={ `/listing/${this.props.listing.id}` }
+        className="grid-card"
+        style={this.state.style}>
+        <GridCardImage
+          image={this.props.listing.image}
+          cardImageRatio={this.props.cardImageRatio}
+          pastel={this.pastel} />
         <div className="grid-card__info">
           <div className="grid-card__info-content">
             <GridCardDescription description={this.props.listing.description} />
@@ -45,6 +55,8 @@ class GridCard extends Component{
 
 
   // Testing resize with react
+  // TODO test with classes instead of calculation...
+  // ...and wrap these elements with li tags on grid container
   handleResize(e) {
     var w = document.getElementsByClassName('grid-card')[0].parentNode.offsetWidth;
     var x = 300;
